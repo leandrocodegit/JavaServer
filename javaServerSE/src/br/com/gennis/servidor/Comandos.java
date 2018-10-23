@@ -16,6 +16,8 @@ public class Comandos {
     
     
     
+    //Recebe lista de dispositivos
+    
     public void importarDados(Socket socket){
         
          try{
@@ -39,6 +41,7 @@ public class Comandos {
         
     }
     
+    // Atualiza todos receptores conectados
     public void atualizaReceptores(Socket socket){
         
          try{

@@ -23,6 +23,8 @@ import java.util.Scanner;
  *
  * @author MONITORAMENTO
  */
+
+// Classe que monitora o recebimento de eventos
 public class Recebedor implements Runnable {
 
     private InputStream cliente;
@@ -231,6 +233,9 @@ public class Recebedor implements Runnable {
 
         }
     }
+    
+    
+    // Acionada o rele - Recebe uma conexao socket como parametro
 
     public void acionarSaida(Socket s) {
 

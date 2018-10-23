@@ -23,6 +23,8 @@ import java.util.logging.Logger;
  *
  * @author LEANDRO
  */
+
+// Classe responsavel por gerenciar a conexoes socket
 public class Servidor implements Runnable {
 
     private Socket socket;
@@ -204,6 +206,9 @@ public class Servidor implements Runnable {
         
 
     }
+    
+    
+    // Distribui mensagem para todos dispositivos conectados - Recebe mensagem como parametro
 
    synchronized public void distribuiMensagem(String msg) {
 

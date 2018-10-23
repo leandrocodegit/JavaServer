@@ -25,6 +25,8 @@ import java.util.List;
  *
  * @author LEANDRO
  */
+// Classe servidora exclusiva do modulo guarita
+
 public class ServidorGuarita implements Runnable {
 
     private Socket socket;
@@ -153,6 +155,8 @@ public class ServidorGuarita implements Runnable {
         }
 
     }
+    
+    // Solicita envio da lista de dispositivos do modulo guarita
 
     public void importarDispositivos() {
 
@@ -174,6 +178,8 @@ public class ServidorGuarita implements Runnable {
         }
     }
 
+    // Reinicia o modulo remotamente
+    
     public void resetGuarita() {
 
         try {
@@ -188,6 +194,8 @@ public class ServidorGuarita implements Runnable {
         }
     }
 
+    
+    //Envia comando em que confirma o recebimento da mensagem solicitada
     public void confirmacao() {
 
         try {
@@ -224,6 +232,9 @@ public class ServidorGuarita implements Runnable {
 
         }
     }
+    
+    
+    // Solicita o reenvio da mensagem
 
     public void reenviar() {
 
@@ -255,6 +266,8 @@ public class ServidorGuarita implements Runnable {
     }
 
     private DBControleRF dbControleRF = new DBControleRF();
+    
+    // Transfere os dados recebidos do equipamento para o banco de dados
 
     public void transferirDados(List<ControleRF> listaDispositivos) {
 
@@ -266,6 +279,8 @@ public class ServidorGuarita implements Runnable {
 
     }
 
+    
+    //Conver para formato ANSI
     private char[] label(String label) {
 
         char[] c = new char[20];
@@ -303,6 +318,7 @@ public class ServidorGuarita implements Runnable {
 
     }
 
+    //Atualiza label da tela do modulo guarita
     public void atualizaTelaGuarita(String enderecoIP) {
 
         try {
@@ -348,6 +364,8 @@ public class ServidorGuarita implements Runnable {
     }
 
     private static boolean falha = false;
+    
+    // Converte string para hexa
 
     public static byte[] hexStringToByteArray(String s) {
 
@@ -369,6 +387,8 @@ public class ServidorGuarita implements Runnable {
         return b;
     }
 
+    
+    // Insere um dispositivo na memoria do modulo
     public void cadastrarControle(String dados) {
 
         String[] cmd = dados.split(";");
